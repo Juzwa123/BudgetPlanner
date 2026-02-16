@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Budget Planner</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4CAF50">
+</head>
+
+<body>
+
+<div class="app">
+
+<header>
+  <div class="logo">💰</div>
+  <div>
+    <h1>Budget Planner</h1>
+    <small>Plan your salary wisely</small>
+  </div>
+</header>
+
+
+<div class="card">
+  <label>Salary</label>
+  <input type="number" id="salary" placeholder="Enter salary amount">
+
+  <label>Next Salary Date</label>
+  <input type="date" id="nextSalary">
+</div>
+
+
+<div class="card">
+  <h3>Expenses</h3>
+
+  <div id="expenseList">
+    <div class="expense-row"><input type="number" class="expense" placeholder="🏢 Field Work"></div>
+    <div class="expense-row"><input type="number" class="expense" placeholder="🏠 Boarding House"></div>
+    <div class="expense-row"><input type="number" class="expense" placeholder="💧 Water Bill"></div>
+    <div class="expense-row"><input type="number" class="expense" placeholder="💡 Electric Bill"></div>
+    <div class="expense-row"><input type="number" class="expense" placeholder="💰 Savings"></div>
+    <div class="expense-row"><input type="number" class="expense" placeholder="🎯 Ipon Challenge"></div>
+    <div class="expense-row"><input type="number" class="expense" placeholder="📶 Wifi"></div>
+    <div class="expense-row"><input type="number" class="expense" placeholder="💳 Home Credit"></div>
+    <div class="expense-row"><input type="number" class="expense" placeholder="🛒 Groceries"></div>
+  </div>
+
+  <button onclick="addExpense()">➕ Add New Expense</button>
+</div>
+
+
+<div class="card buttons">
+  <button onclick="computeBudget()">🧮 Compute Budget</button>
+  <button onclick="saveArchive()">📦 Save Plan</button>
+  <button onclick="openArchive()">📜 View History</button>
+</div>
+
+
+<div class="card result">
+  <p>Total Expenses <span>₱<span id="totalExpenses">0</span></span></p>
+  <p>Remaining Salary <span>₱<span id="remaining">0</span></span></p>
+  <p>Daily Budget <span>₱<span id="dailyBudget">0</span></span></p>
+</div>
+
+
+<footer>
+  Offline Mobile Budget App • Made with ❤️
+</footer>
+
+</div>
+
+
+<!-- ⭐ HISTORY PAGE -->
+<div id="historyPage" class="history-page" style="display:none;">
+  <div class="history-header">
+    <h2>Saved Plans</h2>
+    <button class="close-small" onclick="closeArchive()">✕</button>
+  </div>
+  <div id="historyContent"></div>
+</div>
+
+
+<script src="script.js"></script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
+</script>
+
+</body>
+</html>
