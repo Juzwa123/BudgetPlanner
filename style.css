@@ -1,0 +1,235 @@
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:'Inter',sans-serif;
+}
+
+html, body{
+height:100%;
+margin:0;
+}
+
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+overflow:auto;
+
+background:
+linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+url("https://images.unsplash.com/photo-1579621970795-87facc2f976d?auto=format&fit=crop&w=1600&q=80");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+font-family:'Inter',sans-serif;
+}
+
+/* HEADER */
+header{
+display:flex;
+align-items:center;
+gap:12px;
+margin-bottom:18px;
+}
+
+.logo{
+font-size:28px;
+background:#e8f5e9;
+padding:10px;
+border-radius:14px;
+}
+
+h1{
+font-family:'Poppins',sans-serif;
+font-size:26px;
+font-weight:700;
+}
+
+/* CARDS */
+.card{
+background:#fff6fb;
+padding:16px;
+border-radius:20px;
+margin-top:14px;
+box-shadow:0 6px 18px rgba(255,105,180,.2);
+border:1px solid #ffd1e8;
+}
+
+/* LABEL */
+label{
+font-size:14px;
+font-weight:600;
+margin-top:8px;
+display:block;
+}
+
+/* INPUT */
+input{
+width:100%;
+padding:12px;
+margin-top:6px;
+border-radius:12px;
+border:1px solid #e0e0e0;
+font-size:15px;
+transition:.2s;
+}
+
+input:focus{
+outline:none;
+border-color:#4CAF50;
+box-shadow:0 0 0 2px rgba(76,175,80,.2);
+}
+
+/* EXPENSE ROW */
+.expense-row{
+display:flex;
+gap:8px;
+margin-top:8px;
+}
+
+.delete-btn{
+width:42px;
+background:#e53935;
+border-radius:12px;
+font-size:16px;
+}
+
+/* ========================= */
+/* ⭐ BUTTONS – NEON PINK ⭐ */
+/* ========================= */
+button{
+width:100%;
+margin-top:12px;
+padding:13px;
+border:none;
+border-radius:14px;
+font-weight:600;
+font-size:15px;
+cursor:pointer;
+background:linear-gradient(135deg,#ff2bd6,#ff6ec7);
+color:white;
+transition:.2s;
+}
+
+button:hover{
+transform:translateY(-1px);
+box-shadow:0 0 15px #ff2bd6;
+}
+
+/* RESULT BOX */
+.result{
+background:#e8f5e9;
+font-weight:600;
+font-size:15px;
+}
+
+.result span{
+float:right;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+margin-top:18px;
+font-size:12px;
+color:#777;
+}
+
+/* calculator card */
+.app{
+width:380px;
+max-width:95%;
+margin:auto;
+
+background:linear-gradient(135deg,#fff0f8,#ffe4ec);
+border-radius:30px;
+padding:22px;
+box-shadow:0 25px 60px rgba(255,105,180,.35);
+border:2px solid rgba(255,182,193,.6);
+}
+
+.close-small{
+width:32px;
+height:32px;
+padding:0;
+border-radius:50%;
+font-size:16px;
+background:#e8f5e9;
+color:#2e8b57;
+}
+
+.close-small:hover{
+background:#4CAF50;
+color:white;
+}
+
+/* HISTORY PAGE BACKGROUND */
+.history-page{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.4);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+/* HISTORY CARD */
+.history-page > div{
+width:380px;
+max-width:95%;
+background:white;
+border-radius:24px;
+padding:20px;
+box-shadow:0 25px 60px rgba(0,0,0,.35);
+max-height:85vh;
+overflow:auto;
+}
+
+.history-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:15px;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 480px){
+
+.app{
+width:95%;
+padding:16px;
+border-radius:18px;
+}
+
+header h1{
+font-size:22px;
+}
+
+.card{
+padding:12px;
+}
+
+input{
+padding:10px;
+font-size:14px;
+}
+
+button{
+padding:11px;
+font-size:14px;
+}
+
+.history-page > div{
+width:95%;
+padding:16px;
+border-radius:18px;
+}
+}
